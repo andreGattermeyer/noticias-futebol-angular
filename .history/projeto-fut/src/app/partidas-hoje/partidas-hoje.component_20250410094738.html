@@ -1,0 +1,59 @@
+<section class="partidas-hoje">
+  <div class="container">
+    <h2>Partidas de Hoje</h2>
+    <div class="partidas-grid">
+      <div *ngFor="let partida of partidas" class="partida-card">
+        <!-- Modo Visualização -->
+        <div *ngIf="!partida.isEditing">
+          <div class="partida-header">
+            <span class="campeonato">{{ partida.campeonato }}</span>
+            <span class="horario">{{ partida.horario }}</span>
+          </div>
+          <div class="partida-times">
+            <div class="time">
+              <img [src]="partida.timeCasa.imagem" [alt]="partida.timeCasa.nome">
+              <span>{{ partida.timeCasa.nome }}</span>
+            </div>
+            <div class="versus">VS</div>
+            <div class="time">
+              <img [src]="partida.timeVisitante.imagem" [alt]="partida.timeVisitante.nome">
+              <span>{{ partida.timeVisitante.nome }}</span>
+            </div>
+          </div>
+          <div class="partida-footer">
+            <span class="estadio">{{ partida.estadio }}</span>
+            <button (click)="startEditing(partida)" class="btn-small">Editar</button>
+            <a href="partida-detalhe.html" class="btn-small">Detalhes</a>
+          </div>
+        </div>
+
+        <!-- Modo Edição -->
+        <div *ngIf="partida.isEditing">
+          <div class="partida-header">
+            <input type="text" [(ngModel)]="partida.campeonato" placeholder="Campeonato">
+            <input type="text" [(ngModel)]="partida.horario" placeholder="Horário">
+          </div>
+          <div class="partida-times">
+            <div class="time">
+              <input type="text" [(ngModel)]="partida.timeCasa.nome" placeholder="Time Casa">
+              <input type="text" [(ngModel)]="partida.timeCasa.imagem" placeholder="Imagem Time Casa">
+            </div>
+            <div class="versus">VS</div>
+            <div class="time">
+              <input type="text" [(ngModel)]="partida.timeVisitante.nome" placeholder="Time Visitante">
+              <input type="text" [(ngModel)]="partida.timeVisitante.imagem" placeholder="Imagem Time Visitante">
+            </div>
+          </div>
+          <div class="partida-footer">
+            <input type="text" [(ngModel)]="partida.estadio" placeholder="Estádio">
+            <button (click)="saveChanges(partida)" class="btn-small">Salvar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ver-mais">
+      <a href="partidas.html" class="btn">Ver todas as partidas</a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,92 @@
+<header>
+  <div class="container">
+    <div class="logo">
+      <h1>Fut & Prosa</h1>
+      <p>Sua revista digital de futebol</p>
+    </div>
+    <nav>
+      <ul>
+        <li><a routerLink="'/'" routerLinkActive="router-link-active"  class="active">Home</a></li>
+        <li><aNo Angular, em vez de colocar o HTML diretamente no arquivo partidas.html, é mais eficiente criar um componente específico para a navegação (por exemplo, NavComponent). Isso permitirá reutilizar o código da navegação em várias partes do seu aplicativo. Aqui estão os passos:
+          1. Crie o Componente de Navegação
+          Use o Angular CLI para gerar o componente:
+          ng generate component nav
+
+
+          Isso criará uma pasta nav contendo os arquivos nav.component.ts, nav.component.html, nav.component.css (ou .scss dependendo da configuração).
+          2. Adicione o Código da Navegação no nav.component.html
+          Cole o código do menu de navegação no arquivo nav.component.html:
+          <nav>
+            <ul>
+              <li><a routerLink="/" routerLinkActive="active">Home</a></li>
+              <li><a routerLink="/partidas" routerLinkActive="active">Partidas</a></li>
+              <li><a routerLink="/campeonatos" routerLinkActive="active">Campeonatos</a></li>
+              <li><a routerLink="/times" routerLinkActive="active">Times</a></li>
+              <li><a routerLink="/noticias" routerLinkActive="active">Notícias</a></li>
+            </ul>
+          </nav>
+
+          
+          Nota sobre Navegação no Angular
+          Use routerLink em vez de href. O Angular usa o roteamento para navegar pelas páginas do aplicativo sem recarregar a página.
+          3. Inclua o NavComponent no Componente Partidas
+          No arquivo partidas.component.html, adicione o seletor do componente de navegação:
+          <app-nav></app-nav>
+          <h2>Partidas</h2>
+          <!-- Restante do conteúdo das partidas -->
+
+
+          4. Certifique-se de Registrar os Roteadores
+          No arquivo app-routing.module.ts, registre as rotas:
+          import { NgModule } from '@angular/core';
+          import { RouterModule, Routes } from '@angular/router';
+          import { PartidasComponent } from './partidas/partidas.component';
+
+          const routes: Routes = [
+            { path: '', component: PartidasComponent }, // Página inicial
+            { path: 'partidas', component: PartidasComponent }, // Exemplo
+          ];
+
+          @NgModule({
+            imports: [RouterModule.forRoot(routes)],
+            exports: [RouterModule]
+          })
+          export class AppRoutingModule { }
+
+
+          5. Adicione Estilo à Navegação
+          No arquivo nav.component.css, estilize a navegação:
+          nav {
+            background-color: #333;
+            padding: 1rem;
+          }
+
+          nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+            margin: 0;
+            padding: 0;
+          }
+
+          nav li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+          }
+
+          nav li a.active {
+            border-bottom: 2px solid yellow;
+          }
+
+          
+          Agora, seu componente de navegação (NavComponent) será reutilizável e modular, funcionando dentro do PartidasComponent. Caso precise de mais dicas para personalização ou navegação, estou aqui! 😊
+          >Partidas</a></li>
+        <li><a href="campeonatos.html">Campeonatos</a></li>
+        <li><a href="times.html">Times</a></li>
+        <li><a href="noticias.html">Notícias</a></li>
+      </ul>
+    </nav>
+
+  </div>
+</header>

@@ -1,0 +1,142 @@
+.partidas-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+.partidas-title {
+  color: #2c3e50;
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 700;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+}
+
+.partidas-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.partida-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.partida-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.partida-header {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 15px;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.partida-league {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.partida-time {
+  font-weight: bold;
+}
+
+.partida-content {
+  padding: 15px;
+}
+
+.partida-teams {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+}
+
+.team-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+
+.team-name {
+  font-weight: 600;
+  text-align: center;
+  font-size: 14px;
+}
+
+.versus {
+  font-size: 18px;
+  font-weight: bold;
+  color: #7f8c8d;
+}
+
+.partida-info {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #ecf0f1;
+  padding-top: 10px;
+  font-size: 14px;
+  color: #7f8c8d;
+}
+
+.partida-stadium, .partida-date {
+  display: flex;
+  align-items: center;
+}
+
+.partida-stadium i, .partida-date i {
+  margin-right: 5px;
+}
+
+.no-partidas {
+  text-align: center;
+  padding: 40px;
+  color: #7f8c8d;
+  font-size: 18px;
+  grid-column: 1 / -1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .partidas-list {
+    grid-template-columns: 1fr;
+  }
+
+  .partida-teams {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .team {
+    width: 100%;
+  }
+
+  .versus {
+    margin: 10px 0;
+  }
+
+  .partida-info {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

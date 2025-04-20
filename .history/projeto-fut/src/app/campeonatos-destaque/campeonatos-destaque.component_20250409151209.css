@@ -1,0 +1,44 @@
+h2
+
+.campeonatos-destaque {
+  padding: 60px 0;
+  background-color: #e9f0f7;
+}
+
+.campeonatos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.campeonato-card {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding-bottom: 20px;
+  transition: transform 0.3s;
+}
+
+.campeonato-card:hover {
+  transform: translateY(-5px);
+}
+
+.campeonato-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.campeonato-card h3 {
+  margin: 15px 0 10px;
+  color: #333;
+}
+
+.campeonato-card p {
+  color: #777;
+  font-size: 0.9rem;
+  padding: 0 15px;
+  margin-bottom: 15px;
+}
