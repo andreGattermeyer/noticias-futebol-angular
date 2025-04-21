@@ -42,8 +42,7 @@ Acesse a aplicação em http://localhost:4200.
 │   ├── package.json
 
 
-📜 Licença
-Este projeto está sob a licença Escolha uma licença, ex: MIT.
+
 📞 Contato
 Caso tenha dúvidas ou sugestões, entre em contato:
 - GitHub: andreGattermeyer
